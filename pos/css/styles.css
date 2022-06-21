@@ -1,0 +1,11 @@
+/* font */
+@import url("https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap");
+@import "./var.css";
+
+/* screens */
+@import "./screens/Mainpage.css";
+
+body{
+    color : #2e363e;
+    font-family: "Slabo 27px", serif;
+}

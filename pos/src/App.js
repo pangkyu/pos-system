@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import react, { useEffect } from "react";
+import { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
+import { useScript } from "./hooks/useScript.js";
+import Mainpage from "./pages/Mainpage";
 
-function App() {
+const GlobalStyle = createGlobalStyle`
+  ${reset}
+`;
+const App = () => {
+  const status = useScript("https://kit.fontawesome.com/6478f529f2.js");
+  useEffect(() => {
+    if (status === "ready") {
+      //window.SomeThingSDK();
+    }
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <react.Fragment>
+      <GlobalStyle />
+      <Mainpage />
+    </react.Fragment>
   );
-}
+};
 
 export default App;

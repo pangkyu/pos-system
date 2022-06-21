@@ -1,0 +1,9 @@
+
+:root {
+    --bluetext: #778beb;
+    --main-text: #dfe6e9;
+    --menu-color: rgba(30, 65, 116, 1);
+    --cash-menu-color: rgba(112, 161, 255, 0.3);
+    --cash-border: 1px solid black;
+    --cash-button-color: rgba(0, 0, 0, 0.3);
+  }
