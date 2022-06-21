@@ -1,5 +1,8 @@
+@import "../var.css";
+
 .cafe-form__title {
     display: flex;
+    height: 10vh;
     align-items: flex-start;
     justify-content: center;
     color: var(--menu-color);
@@ -15,6 +18,7 @@
     align-items: center;
     justify-content: center;
     padding: 20px;
+    height: 60vh;
   }
   
   .cafe-form__content-menu {

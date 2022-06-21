@@ -1,0 +1,206 @@
+@import "../var.css";
+
+  .body {
+    display: flex;
+    height: 100%;
+  }
+  
+  .takeout__main {
+    display: flex;
+    height: 750px;
+    justify-content: space-evenly;
+  }
+  
+  .takeout__cash {
+    display: flex;
+    flex-direction: column;
+    height: 540px;
+    width: 40%;
+    border: var(--cash-border);
+    margin-top: 11px;
+  }
+  
+  .takeout__cash--info {
+    display: flex;
+    justify-content: space-evenly;
+    height: 52px;
+    width: 100%;
+    background-color: var(--menu-color);
+  }
+  
+  .takeout__cash--info-list {
+    display: flex;
+    margin-top: 10px;
+    padding: 8px;
+    color: var(--main-text);
+  }
+  
+  .takeout__cash--list {
+    display: flex;
+    flex-direction: column;
+    height: 75%;
+  }
+  
+  .takeout__cash--list-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .takeout__cash--list-area p {
+    padding: 5px;
+    display: flex;
+  }
+  
+  .takeout__cash--option {
+    text-align: center;
+    height: 25px;
+  }
+  
+  .takeout__cash--option-cancel {
+    display: flex;
+    align-items: center;
+    background-color: var(--cash-menu-color);
+    border-top: var(--cash-border);
+    border-bottom: var(--cash-border);
+    width: 100%;
+    height: 100%;
+  }
+  
+  .takeout__cash--option-cancel div {
+    width: 25%;
+  }
+  
+  .takeout__cash--option-cancel-allclear {
+    border-right: var(--cash-border);
+  }
+  
+  .takeout__cash--option-cancel-lineclear {
+    border-right: var(--cash-border);
+  }
+  
+  .takeout__cash--option-cancel-plus {
+    border-right: var(--cash-border);
+  }
+  
+  .takeout__cash--option-cancel-allclear:hover,
+  .takeout__cash--option-cancel-lineclear:hover,
+  .takeout__cash--option-cancel-plus:hover,
+  .takeout__cash--option-cancel-minus:hover {
+    background-color: rgba(112, 161, 255, 0.3);
+  }
+  
+  .takeout__cash--option-total {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgba(112, 161, 255, 0.7);
+    margin-top: 2px;
+    height: 18%;
+    font-weight: 600;
+  }
+  
+  .takeout__cash--option-total-price {
+    padding: 40px;
+  }
+  
+  .takeout__menu {
+    display: flex;
+    flex-direction: column;
+    height: 540px;
+    width: 55%;
+    border: var(--cash-border);
+    margin-top: 11px;
+  }
+  
+  .takeout__menu--group {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    height: 20%;
+    width: 100%;
+  }
+  
+  .takeout__menu--group-button {
+    padding: 15px;
+    width: 16%;
+    text-align: center;
+    margin-top: 3px;
+    border-radius: 10px;
+    background-color: #1e4174;
+    color: white;
+  }
+  .takeout__menu--group-button:hover {
+    background-color: rgba(30, 65, 116, 0.8);
+  }
+  
+  .takeout__menu--dishes {
+    display: flex;
+    border-top: var(--cash-border);
+    height: 100%;
+    margin-top: 4px;
+  }
+  
+  .takeout__menu--dishes-coffee {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 13px;
+  }
+  
+  .takeout__menu--dishes-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    width: 16%;
+    height: 50px;
+    align-items: center;
+    border-radius: 10px;
+    background-color: var(--cash-button-color);
+  }
+  
+  .takeout__menu--dishes-button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .takeout__footer {
+    display: flex;
+    margin-top: 20px;
+    background-color: #1e4174;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .takeout__footer--option {
+    display: flex;
+    justify-content: space-evenly;
+    width: 60%;
+  }
+  
+  .takeout__footer--pay {
+    display: flex;
+    justify-content: space-evenly;
+    width: 40%;
+  }
+  
+  .takeout__footer--pay-method,
+  .takeout__footer--option-kind {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 37px;
+    color: white;
+    justify-content: center;
+  }
+  
+  .takeout__footer--option-kind:hover,
+  .takeout__footer--pay-method:hover {
+    background-color: #778beb;
+  }
+  .takeout__footer--option-kind i,
+  .takeout__footer--pay-method i {
+    margin-bottom: 16px;
+  }

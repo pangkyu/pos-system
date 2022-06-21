@@ -1,0 +1,192 @@
+import react from "react";
+import { Link } from "react-router-dom";
+
+//import "../css/styles.css";
+//import "../css/screens/Takeout.css";
+
+const timeNow = document.getElementById("header__timeNow");
+
+function getClock() {
+  const date = new Date();
+  const year = String(date.getFullYear());
+  const month = String(date.getMonth()).padStart(2, "0");
+  const day = String(date.getUTCDate()).padStart(2, "0");
+  const hours = String(date.getHours()).padStart(2, "0");
+  const minutes = String(date.getMinutes()).padStart(2, "0");
+  const seconds = String(date.getSeconds()).padStart(2, "0");
+  //timeNow.innerText = `${year}년 ${month}월 ${day}일 ${hours}:${minutes}:${seconds}`;
+}
+
+getClock();
+setInterval(getClock, 1000);
+
+function Takeout() {
+  return (
+    <>
+      <header>
+        <div className="header">
+          <div className="header-sector">
+            <div className="header__img">
+              <i className="fas fa-concierge-bell fa-2x"></i>
+            </div>
+            <div className="header__text">
+              <h5>테이크 아웃</h5>
+            </div>
+            <div className="header__time">
+              <p id="header__timeNow">현재시간</p>
+            </div>
+          </div>
+          <div className="header-sector">
+            <div className="header__text header--left">
+              <p>테이크 아웃</p>
+            </div>
+            <div className="header__text header--left">
+              <i className="far fa-user fa-lg"></i>
+              <p>배성규</p>
+            </div>
+            <Link to="/" className="header__close header--left">
+              <i className="fas fa-times fa-2x"></i>
+            </Link>
+          </div>
+        </div>
+      </header>
+
+      <main className="takeout__main">
+        <div className="takeout__cash">
+          <div className="takeout__cash--info">
+            <div className="takeout__cash--info-list">메뉴 이름</div>
+            <div className="takeout__cash--info-list">단가</div>
+            <div className="takeout__cash--info-list">수량</div>
+            <div className="takeout__cash--info-list">가격</div>
+          </div>
+          <div className="takeout__cash--list">
+            <div className="takeout__cash--list-area">
+              <p className="takeout__cash--list-area-menu">아메리카노(ice)</p>
+              <p className="takeout__cash--list-area-unitprice">4500</p>
+              <p className="takeout__cash--list-area-amount">1</p>
+              <p className="takeout__cash--list-area-price">4500</p>
+            </div>
+          </div>
+          <div className="takeout__cash--option">
+            <div className="takeout__cash--option-cancel">
+              <div className="takeout__cash--option-cancel-allclear">
+                전체취소
+              </div>
+              <div className="takeout__cash--option-cancel-lineclear">
+                라인취소
+              </div>
+              <div className="takeout__cash--option-cancel-plus">+</div>
+              <div className="takeout__cash--option-cancel-minus">-</div>
+            </div>
+            <div className="takeout__cash--option-total">
+              <div className="takeout__cash--option-total-price">합계 금액</div>
+              <div className="takeout__cash--option-total-price">4500원</div>
+            </div>
+          </div>
+        </div>
+        <div className="takeout__menu">
+          <div className="takeout__menu--group">
+            <div className="takeout__menu--group-button">커피</div>
+            <div className="takeout__menu--group-button">라떼</div>
+            <div className="takeout__menu--group-button">생과일주스</div>
+            <div className="takeout__menu--group-button">생과일에이드</div>
+            <div className="takeout__menu--group-button">버블티</div>
+            <div className="takeout__menu--group-button">차</div>
+            <div className="takeout__menu--group-button">디저트</div>
+            <div className="takeout__menu--group-button">md상품</div>
+            <div className="takeout__menu--group-button">빙수</div>
+            <div className="takeout__menu--group-button">마카롱</div>
+          </div>
+          <div className="takeout__menu--dishes">
+            <div className="takeout__menu--dishes-coffee">
+              <div className="takeout__menu--dishes-button">
+                아메리카노 ICE 3000
+              </div>
+              <div className="takeout__menu--dishes-button">
+                아메리카노 HOT 2500
+              </div>
+              <div className="takeout__menu--dishes-button">
+                카페라떼 HOT 3000
+              </div>
+              <div className="takeout__menu--dishes-button">
+                카페라떼 ICE 3500
+              </div>
+              <div className="takeout__menu--dishes-button">
+                카라멜 마끼야또 ICE 3000
+              </div>
+              <div className="takeout__menu--dishes-button">
+                카라멜 마끼야또 HOT 2500
+              </div>
+              <div className="takeout__menu--dishes-button">
+                카푸치노 ICE 3000
+              </div>
+              <div className="takeout__menu--dishes-button">
+                카푸치노 HOT 3000
+              </div>
+              <div className="takeout__menu--dishes-button">
+                더치 아메리카노 ICE 3000
+              </div>
+              <div className="takeout__menu--dishes-button">
+                더치 아메리카노 HOT 3000
+              </div>
+              <div className="takeout__menu--dishes-button">아포가토 4500</div>
+              <div className="takeout__menu--dishes-button">
+                에스프레소 HOT 3000
+              </div>
+              <div className="takeout__menu--dishes-button">
+                콜드브루 ICE 3000
+              </div>
+              <div className="takeout__menu--dishes-button">
+                콜드브루 HOT 3000
+              </div>
+              <div className="takeout__menu--dishes-button">
+                바닐라라떼 ICE 3000
+              </div>
+              <div className="takeout__menu--dishes-button">
+                바닐라라떼 HOT 3000
+              </div>
+              <div className="takeout__menu--dishes-button">
+                달구나크림커피 3000
+              </div>
+              <div className="takeout__menu--dishes-button">
+                카페모카 ICE 3000
+              </div>
+              <div className="takeout__menu--dishes-button">
+                카페모카 HOT 3000
+              </div>
+              <div className="takeout__menu--dishes-button">샷추가 500</div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div className="takeout__footer">
+          <div className="takeout__footer--option">
+            <div className="takeout__footer--option-kind">
+              <i className="fas fa-box-open fa-lg"></i>돈통
+            </div>
+            <div className="takeout__footer--option-kind">
+              <i className="fas fa-concierge-bell fa-lg"></i>전체 서비스
+            </div>
+            <div className="takeout__footer--option-kind">
+              <i className="fas fa-comment-dollar fa-lg"></i>단가 변경
+            </div>
+            <div className="takeout__footer--option-kind">
+              <i className="fas fa-file-invoice-dollar fa-lg"></i>영수증 관리
+            </div>
+          </div>
+          <div className="takeout__footer--pay">
+            <div className="takeout__footer--pay-method">
+              <i className="fas fa-won-sign fa-lg"></i>현금
+            </div>
+            <div className="takeout__footer--pay-method">
+              <i className="fas fa-won-sign fa-lg"></i>카드
+            </div>
+          </div>
+        </div>
+      </footer>
+    </>
+  );
+}
+
+export default Takeout;

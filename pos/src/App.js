@@ -1,12 +1,15 @@
 import react, { useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 import { useScript } from "./hooks/useScript.js";
 import Mainpage from "./pages/Mainpage";
+import Takeout from "./pages/Takeout";
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
 `;
+
 const App = () => {
   const status = useScript("https://kit.fontawesome.com/6478f529f2.js");
   useEffect(() => {
@@ -17,7 +20,10 @@ const App = () => {
   return (
     <react.Fragment>
       <GlobalStyle />
-      <Mainpage />
+      <Routes>
+        <Route path="" exact element={<Mainpage />} />
+        <Route path="Takeout" exact element={<Takeout />} />
+      </Routes>
     </react.Fragment>
   );
 };
