@@ -1,26 +1,28 @@
-import react from "react";
-import { Link } from "react-router-dom";
-
-//import "../css/styles.css";
-//import "../css/screens/Takeout.css";
-
-const timeNow = document.getElementById("header__timeNow");
-
-function getClock() {
-  const date = new Date();
-  const year = String(date.getFullYear());
-  const month = String(date.getMonth()).padStart(2, "0");
-  const day = String(date.getUTCDate()).padStart(2, "0");
-  const hours = String(date.getHours()).padStart(2, "0");
-  const minutes = String(date.getMinutes()).padStart(2, "0");
-  const seconds = String(date.getSeconds()).padStart(2, "0");
-  //timeNow.innerText = `${year}년 ${month}월 ${day}일 ${hours}:${minutes}:${seconds}`;
-}
-
-getClock();
-setInterval(getClock, 1000);
+import react, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 function Takeout() {
+  const navigate = useNavigate();
+
+  const handleonClick = () => {
+    navigate(-1);
+  };
+
+  const [timer, setTimer] = useState("");
+  const currentTimer = () => {
+    const date = new Date();
+    const year = String(date.getFullYear());
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getUTCDate()).padStart(2, "0");
+    const hours = String(date.getHours()).padStart(2, "0");
+    const minutes = String(date.getMinutes()).padStart(2, "0");
+    const seconds = String(date.getSeconds()).padStart(2, "0");
+    setTimer(`${year}년 ${month}월 ${day}일 ${hours}:${minutes}:${seconds}`);
+  };
+  const startTimer = () => {
+    setInterval(currentTimer, 1000);
+  };
+  startTimer();
   return (
     <>
       <header>
@@ -33,7 +35,7 @@ function Takeout() {
               <h5>테이크 아웃</h5>
             </div>
             <div className="header__time">
-              <p id="header__timeNow">현재시간</p>
+              <p id="header__timeNow">{timer}</p>
             </div>
           </div>
           <div className="header-sector">
@@ -44,9 +46,9 @@ function Takeout() {
               <i className="far fa-user fa-lg"></i>
               <p>배성규</p>
             </div>
-            <Link to="/" className="header__close header--left">
+            <div onClick={handleonClick} className="header__close header--left">
               <i className="fas fa-times fa-2x"></i>
-            </Link>
+            </div>
           </div>
         </div>
       </header>
@@ -171,9 +173,9 @@ function Takeout() {
             <div className="takeout__footer--option-kind">
               <i className="fas fa-comment-dollar fa-lg"></i>단가 변경
             </div>
-            <div className="takeout__footer--option-kind">
+            <Link to="../Orderlist" className="takeout__footer--option-kind">
               <i className="fas fa-file-invoice-dollar fa-lg"></i>영수증 관리
-            </div>
+            </Link>
           </div>
           <div className="takeout__footer--pay">
             <div className="takeout__footer--pay-method">

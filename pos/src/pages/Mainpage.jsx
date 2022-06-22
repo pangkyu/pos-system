@@ -18,19 +18,19 @@ function Mainpage() {
               <i className="fas fa-angle-right"></i>
             </div>
           </Link>
-          <Link to="Takeout" className="cafe-form__content-menu">
+          <Link to="Sales" className="cafe-form__content-menu">
             매출액<i className="fas fa-desktop"></i>
             <div>
               <i className="fas fa-angle-right"></i>
             </div>
           </Link>
-          <Link to="Takeout" className="cafe-form__content-menu">
+          <Link to="Orderlist" className="cafe-form__content-menu">
             주문목록조회<i className="fas fa-comment-alt"></i>
             <div>
               <i className="fas fa-angle-right"></i>
             </div>
           </Link>
-          <Link to="Takeout" className="cafe-form__content-menu">
+          <Link to="Staff" className="cafe-form__content-menu">
             근무자 관리<i className="fas fa-user-cog"></i>
             <div>
               <i className="fas fa-angle-right"></i>

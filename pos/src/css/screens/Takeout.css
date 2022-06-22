@@ -14,7 +14,7 @@
   .takeout__cash {
     display: flex;
     flex-direction: column;
-    height: 540px;
+    height: 90%;
     width: 40%;
     border: var(--cash-border);
     margin-top: 11px;
@@ -94,7 +94,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: rgba(112, 161, 255, 0.7);
+    /*background-color: rgba(112, 161, 255, 0.7);*/
     margin-top: 2px;
     height: 18%;
     font-weight: 600;
@@ -107,7 +107,7 @@
   .takeout__menu {
     display: flex;
     flex-direction: column;
-    height: 540px;
+    height: 90%;
     width: 55%;
     border: var(--cash-border);
     margin-top: 11px;
@@ -117,7 +117,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
-    height: 20%;
+    height: 25%;
     width: 100%;
   }
   
@@ -156,7 +156,7 @@
     text-align: center;
     padding: 15px;
     width: 16%;
-    height: 50px;
+    height: 13%;
     align-items: center;
     border-radius: 10px;
     background-color: var(--cash-button-color);

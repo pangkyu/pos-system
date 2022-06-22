@@ -3,10 +3,16 @@
 /* screens */
 @import "./screens/Mainpage.css";
 @import "./screens/Takeout.css";
+@import "./screens/Orderlist.css";
+@import "./screens/Sales.css";
+@import "./screens/Staff.css";
 /* conponents */
 @import "./components/header-bar.css";
 
 body{
     color : #2e363e;
     font-family: "Slabo 27px", serif;
+}
+a{
+    text-decoration: none;
 }

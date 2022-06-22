@@ -1,0 +1,65 @@
+.staff__main {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    align-items: center;
+    margin-top: 8%;
+  }
+  .staff__main--header,
+  .staff__main--content,
+  .staff__main--footer {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    justify-content: space-evenly;
+    text-align: center;
+  }
+  .staff__main--header,
+  .staff__main--footer {
+    background-color: rgba(255, 177, 66, 0.3);
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .staff__main--header {
+    font-weight: 800;
+  }
+  
+  .staff__main--content {
+    padding: 15px;
+    background-color: rgba(255, 250, 101, 0.2);
+    color: rgba(255, 177, 66, 0.9);
+  }
+  
+  .staff__main-position {
+    width: 25%;
+  }
+  
+  .staff__main-staff {
+    width: 35%;
+  }
+  
+  .staff__main-sex {
+    width: 15%;
+  }
+  
+  .staff__main-num {
+    width: 25%;
+  }
+  
+  .staff__main--footer-add {
+    width: 20%;
+  }
+  .staff__main--footer-remove {
+    width: 20%;
+  }
+  
+  .staff__main--footer-edit {
+    width: 20%;
+  }
+  
+  .staff__main--footer-add:hover,
+  .staff__main--footer-remove:hover,
+  .staff__main--footer-edit:hover {
+    color: rgba(255, 177, 66, 0.9);
+  }
