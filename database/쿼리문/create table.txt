@@ -1,0 +1,9 @@
+create table MENU
+(
+    MENU_KEY      int auto_increment comment '메뉴번호'
+        primary key,
+    MENU_CATEGORY   varchar(500)                          not null comment '메뉴카테고리',
+    MENU_NAME varchar(500)                          not null COMMENT '메뉴이름',
+    MENU_PRICE    int                         not null comment '가격'
+)
+    charset = utf8mb3;
