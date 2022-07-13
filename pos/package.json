@@ -6,6 +6,8 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
     "express": "^4.18.1",
     "mysql": "^2.18.1",
     "react": "^18.2.0",
@@ -19,7 +21,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "eslintConfig": {
     "extends": [
@@ -38,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.2"
   }
 }
