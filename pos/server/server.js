@@ -5,7 +5,7 @@ const cors = require("cors");
 const mysql = require("mysql");
 
 app.get("/", (req, res) => {
-  res.send("hi!");
+  res.send("hid!");
 });
 
 app.listen(port, () => {
