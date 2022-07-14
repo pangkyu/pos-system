@@ -21,6 +21,8 @@ https://github.com/pangkyu/cafe-casher-site (기존 html 프로젝트)
  
 </div>
 
-## 실행방법🖥️
- 
+## 실행방법🖥️ 
+  <details>
+ <summary>자세히</summary><br/><br/>
   터미널에서 pos디렉토리로 이동한 뒤, npm start 
+  </details>
