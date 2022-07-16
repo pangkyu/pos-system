@@ -51,12 +51,9 @@ function Staff() {
             <div className="staff__main-sex">성별</div>
             <div className="staff__main-num">연락처</div>
           </div>
-          <div className="staff__main--content">
-            <div className="staff__main-position">직원</div>
-            <div className="staff__main-staff">배성규</div>
-            <div className="staff__main-sex">남성</div>
-            <div className="staff__main-num">01040998259</div>
-          </div>
+          {staffData.map((e) => {
+            return <StaffRow StaffRow={e} />;
+          })}
           <div className="staff__main--footer">
             <div id="staffAddBtn" className="staff__main--footer-add">
               추가
