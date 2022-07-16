@@ -1,13 +1,17 @@
 import react, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useEffect } from "react";
 
 function Takeout() {
+  // navigate 설정
   const navigate = useNavigate();
 
   const handleonClick = () => {
     navigate(-1);
   };
 
+  // 시간 UI 출력
   const [timer, setTimer] = useState("");
   const currentTimer = () => {
     const date = new Date();
@@ -23,6 +27,7 @@ function Takeout() {
     setInterval(currentTimer, 1000);
   };
   startTimer();
+
   return (
     <>
       <header>

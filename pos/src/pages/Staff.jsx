@@ -1,14 +1,29 @@
 import react from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import StaffRow from "../components/StaffRow";
 
 import "../css/styles.css";
 
 function Staff() {
+  //navigate
   const navigate = useNavigate();
 
   const handleonClick = () => {
     navigate(-1);
   };
+
+  //axios
+  const [staffData, setStaffData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get("Staff");
+      setStaffData(response.data);
+    };
+    fetchData();
+  }, []);
+  console.log(staffData);
   return (
     <>
       <header>
