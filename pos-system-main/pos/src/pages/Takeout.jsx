@@ -1,7 +1,7 @@
-import react, { useState } from "react";
+import react, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+
 import axios from "axios";
-import { useEffect } from "react";
 
 function Takeout() {
   // navigate 설정
@@ -13,6 +13,15 @@ function Takeout() {
 
   // 시간 UI 출력
   const [timer, setTimer] = useState("");
+
+  useEffect(() => {
+    let startTimer = setInterval(() => {
+      setTimer(currentTimer);
+    }, 1000);
+    return () => {
+      clearInterval(startTimer);
+    };
+  }, []);
   const currentTimer = () => {
     const date = new Date();
     const year = String(date.getFullYear());
@@ -23,10 +32,6 @@ function Takeout() {
     const seconds = String(date.getSeconds()).padStart(2, "0");
     setTimer(`${year}년 ${month}월 ${day}일 ${hours}:${minutes}:${seconds}`);
   };
-  const startTimer = () => {
-    setInterval(currentTimer, 1000);
-  };
-  startTimer();
 
   //axios
   const [categoryData, setCategoryData] = useState([]);

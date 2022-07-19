@@ -22,8 +22,8 @@
   },
   "scripts": {
     "start": "npm-run-all --parallel start:**",
-    "start:client" : "react-scripts start",
-    "start:server" : "nodemon ./server/server.js",
+    "start:client": "react-scripts start",
+    "start:server": "nodemon ./server/server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -31,7 +31,6 @@
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  
   "eslintConfig": {
     "extends": [
       "react-app",
