@@ -24,11 +24,11 @@ const App = () => {
     <react.Fragment>
       <GlobalStyle />
       <Routes>
-        <Route path="" element={<Mainpage />} />
-        <Route path="Takeout" element={<Takeout />} />
-        <Route path="Orderlist" element={<Orderlist />} />
-        <Route path="Sales" element={<Sales />} />
-        <Route path="Staff" element={<Staff />} />
+        <Route path="" exact element={<Mainpage />} />
+        <Route path="Takeout" exact element={<Takeout />} />
+        <Route path="Orderlist" exact element={<Orderlist />} />
+        <Route path="Sales" exact element={<Sales />} />
+        <Route path="Staff" exact element={<Staff />} />
       </Routes>
     </react.Fragment>
   );

@@ -1,0 +1,140 @@
+.sales-date {
+    display: flex;
+    flex-direction: row;
+    width: 600px;
+    height: 50px;
+    margin-left: 500px;
+    margin-top: 25px;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    border: 2px solid rgba(30, 65, 116, 0.8);
+    border-radius: 3px;
+  }
+  
+  .sales-date__today {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100px;
+    background-color: rgba(30, 65, 116, 0.8);
+    color: var(--main-text);
+  }
+  .sales-date__calendar {
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    height: 50px;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .sales-date__calendar-box {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sales-record {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 530px;
+  
+    border: var(--cash-border);
+    margin-top: 30px;
+  }
+  
+  .sales-record__header,
+  .sales-record__content {
+    display: flex;
+    flex-direction: row;
+    border-bottom: var(--cash-border);
+  }
+  
+  .sales-record__header--day,
+  .sales-record__header--sales,
+  .sales-record__header--statement,
+  .sales-record__content--day,
+  .sales-record__content--sales,
+  .sales-record__content--statement {
+    display: flex;
+    width: 33%;
+  }
+  
+  .sales-record__header--sales,
+  .sales-record__header--statement,
+  .sales-record__content--sales,
+  .sales-record__content--statement {
+    border-left: var(--cash-border);
+  }
+  .sales-record__header {
+    color: var(--main-text);
+  }
+  
+  .sales-record__header div {
+    padding: 6px;
+    background-color: rgba(30, 65, 116, 0.7);
+  }
+  
+  .sales-record__content div {
+    padding: 8px;
+  }
+  
+  .sales-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  
+  .sales-paytype {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 530px;
+    margin-left: 12px;
+    border: var(--cash-border);
+    margin-top: 30px;
+  }
+  
+  .sales-paytype__payment--header {
+    padding: 6px;
+    background-color: rgba(30, 65, 116, 0.7);
+    text-align: center;
+    color: var(--main-text);
+  }
+  
+  .sales-paytype__payment--content-cash,
+  .sales-paytype__payment--content-credit,
+  .sales-paytype__payment--content-gift,
+  .sales-paytype__payment--content-point,
+  .sales-paytype__payment--content-total,
+  .sales-paytype__payment--content-discount {
+    display: flex;
+    flex-direction: row;
+    padding: 33px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  }
+  
+  .sales-paytype__payment--content-icon {
+    width: 3%;
+  }
+  
+  .sales-paytype__payment--content-methodtext {
+    width: 28%;
+  }
+  
+  .sales-paytype__payment--content-counttext {
+    width: 30%;
+  }
+  
+  .sales-paytype__payment--content-totaltext {
+    width: 40%;
+    text-align: center;
+  }
+  
+  .sales-paytype__payment--content-discount
+    .sales-paytype__payment--content-methodtext,
+  .sales-paytype__payment--content-total
+    .sales-paytype__payment--content-methodtext {
+    width: 58%;
+  }

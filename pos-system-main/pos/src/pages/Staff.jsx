@@ -18,11 +18,12 @@ function Staff() {
   const [staffData, setStaffData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:3001/staff");
+      const response = await axios.get("Staff");
       setStaffData(response.data);
     };
     fetchData();
   }, []);
+  console.log(staffData);
   return (
     <>
       <header>

@@ -1,0 +1,46 @@
+@import "../var.css";
+
+.cafe-form__title {
+    display: flex;
+    height: 10vh;
+    align-items: flex-start;
+    justify-content: center;
+    color: var(--menu-color);
+    font-size: 36px;
+    font-weight: 400;
+    padding: 20px;
+    margin: 25px;
+  }
+  
+  .cafe-form__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 60vh;
+  }
+  
+  .cafe-form__content-menu {
+    display: flex;
+    padding: 30px;
+    width: 80%;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    background-color: var(--menu-color);
+    color: var(--main-text);
+  }
+  
+  .cafe-form__content-menu:hover {
+    background-color: rgba(30, 65, 116, 0.6);
+  }
+  
+  .cafe-form__content-menu i {
+    margin-left: 7px;
+  }
+  
+  .cafe-form__content-menu div {
+    margin-left: auto;
+  }

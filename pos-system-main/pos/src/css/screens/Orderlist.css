@@ -1,0 +1,145 @@
+body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .orderlist__list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 90%;
+    height: 320px;
+    margin-left: 15px;
+    border: 1px solid #1e4174;
+  }
+  
+  .orderlist__list--header,
+  .orderlist__list--content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .orderlist__list--header {
+    background-color: #1e4174;
+    height: 30px;
+    color: white;
+    align-items: center;
+  }
+  
+  .orderlist__list--header-no {
+    width: 5%;
+  }
+  
+  .orderlist__list--header-receipt {
+    width: 10%;
+  }
+  
+  .orderlist__list--header-staff {
+    width: 10%;
+  }
+  
+  .orderlist__list--header-deal {
+    width: 20%;
+  }
+  
+  .orderlist__list--header-table {
+    width: 10%;
+  }
+  
+  .orderlist__list--header-discount {
+    width: 15%;
+  }
+  
+  .orderlist__list--header-amount {
+    width: 20%;
+  }
+  
+  .orderlist__list--header-paymethod {
+    width: 10%;
+  }
+  
+  .orderlist__list--content {
+    height: 50px;
+    border-bottom: 1px solid #1e4174;
+    align-items: center;
+  }
+  
+  .orderlist__button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: #1e4174;
+    border-radius: 8px;
+    width: 190px;
+    height: 50px;
+    margin-left: 15px;
+    margin-top: 15px;
+  }
+  
+  .orderlist__button--up,
+  .orderlist__button--down,
+  .orderlist__button--return {
+    padding: 10px;
+    color: var(--main-text);
+  }
+  
+  .orderlist__button--up:hover,
+  .orderlist__button--down:hover,
+  .orderlist__button--return:hover {
+    color: white;
+  }
+  
+  .orderlist__button--return {
+    align-items: center;
+    margin-top: 5px;
+    font-size: 17px;
+  }
+  
+  .orderlist__footer {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-left: 15px;
+    margin-top: 30px;
+    border: 1px solid #1e4174;
+  }
+  
+  .orderlist__footer--header,
+  .orderlist__footer--content {
+    display: flex;
+    flex-direction: row;
+    padding: 24px;
+    justify-content: space-between;
+    text-align: center;
+  }
+  
+  .orderlist__footer--header {
+    background-color: #1e4174;
+    color: white;
+  }
+  
+  .orderlist__footer--content {
+    height: 130px;
+  }
+  
+  .orderlist__footer--header-no {
+    width: 20%;
+  }
+  
+  .orderlist__footer--header-goods {
+    width: 40%;
+  }
+  
+  .orderlist__footer--header-paymethod {
+    width: 10%;
+  }
+  
+  .orderlist__footer--header-amount {
+    width: 10%;
+  }
+  
+  .orderlist__footer--header-deal {
+    width: 20%;
+  }

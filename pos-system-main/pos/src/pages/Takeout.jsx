@@ -1,8 +1,7 @@
-import react from "react";
+import react, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useEffect, useState } from "react";
-import Category from "../components/Category";
+import { useEffect } from "react";
 
 function Takeout() {
   // navigate 설정
@@ -28,17 +27,6 @@ function Takeout() {
     setInterval(currentTimer, 1000);
   };
   startTimer();
-
-  //axios
-  const [menuData, setMenuData] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios.get("Takeout");
-      setMenuData(response.data);
-    };
-    fetchData();
-  }, []);
-  console.log(menuData);
 
   return (
     <>
@@ -105,9 +93,16 @@ function Takeout() {
         </div>
         <div className="takeout__menu">
           <div className="takeout__menu--group">
-            {menuData.map((e) => {
-              return <Category Category={e} />;
-            })}
+            <div className="takeout__menu--group-button">커피</div>
+            <div className="takeout__menu--group-button">라떼</div>
+            <div className="takeout__menu--group-button">생과일주스</div>
+            <div className="takeout__menu--group-button">생과일에이드</div>
+            <div className="takeout__menu--group-button">버블티</div>
+            <div className="takeout__menu--group-button">차</div>
+            <div className="takeout__menu--group-button">디저트</div>
+            <div className="takeout__menu--group-button">md상품</div>
+            <div className="takeout__menu--group-button">빙수</div>
+            <div className="takeout__menu--group-button">마카롱</div>
           </div>
           <div className="takeout__menu--dishes">
             <div className="takeout__menu--dishes-coffee">
