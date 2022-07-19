@@ -1,5 +1,6 @@
 import react, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Category from "../components/Category";
 
 import axios from "axios";
 
@@ -34,15 +35,16 @@ function Takeout() {
   };
 
   //axios
+
+  // 카테고리 데이터 받아오기
   const [categoryData, setCategoryData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("Takeout");
+      const response = await axios.get("category");
       setCategoryData(response.data);
     };
     fetchData();
   }, []);
-  console.log(categoryData);
 
   return (
     <>
@@ -109,16 +111,9 @@ function Takeout() {
         </div>
         <div className="takeout__menu">
           <div className="takeout__menu--group">
-            <div className="takeout__menu--group-button">커피</div>
-            <div className="takeout__menu--group-button">라떼</div>
-            <div className="takeout__menu--group-button">생과일주스</div>
-            <div className="takeout__menu--group-button">생과일에이드</div>
-            <div className="takeout__menu--group-button">버블티</div>
-            <div className="takeout__menu--group-button">차</div>
-            <div className="takeout__menu--group-button">디저트</div>
-            <div className="takeout__menu--group-button">md상품</div>
-            <div className="takeout__menu--group-button">빙수</div>
-            <div className="takeout__menu--group-button">마카롱</div>
+            {categoryData.map((e) => {
+              return <Category Category={e} />;
+            })}
           </div>
           <div className="takeout__menu--dishes">
             <div className="takeout__menu--dishes-coffee">

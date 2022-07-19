@@ -1,11 +1,13 @@
 import react from "react";
-import _ from "lodash";
 
 const Category = ({ Category }) => {
-  const newArray = _.uniq(Category.MENU_CATEGORY);
+  console.log(Object.keys(Category));
+
   return (
     <>
-      <div className="takeout__menu--group-button">{newArray}</div>
+      <div className="takeout__menu--group-button">
+        {Category.MENU_CATEGORY}
+      </div>
     </>
   );
 };

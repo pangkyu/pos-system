@@ -6,7 +6,8 @@ const port = 3001;
 const db = require("./database");
 //router folder
 const takeout = require("./Router/takeout");
-app.all("/Takeout", takeout);
+app.get("/category", takeout);
+app.all("/menu", takeout);
 const staff = require("./Router/staff");
 app.all("/Staff", staff);
 
