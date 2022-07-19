@@ -28,6 +28,17 @@ function Takeout() {
   };
   startTimer();
 
+  //axios
+  const [categoryData, setCategoryData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get("Takeout");
+      setCategoryData(response.data);
+    };
+    fetchData();
+  }, []);
+  console.log(categoryData);
+
   return (
     <>
       <header>
