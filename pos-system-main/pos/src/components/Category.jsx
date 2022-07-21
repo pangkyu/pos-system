@@ -1,8 +1,6 @@
-import react from "react";
+import react, { createElement, ReactDOM } from "react";
 
 const Category = ({ Category }) => {
-  console.log(Object.keys(Category));
-
   return (
     <>
       <div className="takeout__menu--group-button">
