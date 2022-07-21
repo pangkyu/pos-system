@@ -1,4 +1,4 @@
-import react, { createElement, ReactDOM } from "react";
+import react from "react";
 
 const Category = ({ Category }) => {
   return (

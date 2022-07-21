@@ -41,20 +41,24 @@ function Takeout() {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get("category");
-      if (Object.keys(categoryData).length < 10) {
-        for (let i = Object.keys(categoryData).length; i < 10; i++) {
-          response.data.push({ MENU_CATEGORY: " " });
-          console.log(categoryData);
-          console.log(Object.keys(categoryData).length);
-          setCategoryData(response.data);
-        }
-      } else {
+      //setCategoryData(response.data);
+      for (let i = 8; i < 10; i++) {
+        response.data.push({ MENU_CATEGORY: " " });
         setCategoryData(response.data);
       }
+      // if (categoryData.length < 10) {
+      //   for (let i = 10 - categoryData.length; i >= 0; i--) {
+      //     response.data.push({ MENU_CATEGORY: " " });
+      //     console.log(response.data);
+      //     console.log(Object.keys(categoryData).length);
+      //     setCategoryData(response.data);
+      //   }
+      // } else {
+      //   setCategoryData(response.data);
+      // }
     };
     fetchData();
   }, []);
-
   return (
     <>
       <header>
