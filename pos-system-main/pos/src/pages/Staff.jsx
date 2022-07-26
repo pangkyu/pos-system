@@ -23,7 +23,34 @@ function Staff() {
     };
     fetchData();
   }, []);
-  console.log(staffData);
+
+  // 삭제 클릭버튼 이벤트리스너
+  const [deleteData, setDeleteData] = useState(0);
+  const handleDelete = async (e) => {
+    e.preventDefault();
+    if (window.confirm("정말 삭제하시겠습니까?")) {
+    } else {
+      alert("삭제가 취소되었습니다.");
+      navigate(0);
+    }
+  };
+
+  // 등록 클릭버튼 이벤트리스너
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const position = prompt("포지션을 입력해주세요", "직원");
+    const name = prompt("이름을 입력해주세요", "홍길동");
+    const sex = prompt("성별을 입력해주세요", "남성");
+    const number = prompt("연락처를 입력해주세요", "000-0000-0000");
+    await axios.post("http://localhost:3001/Staff", {
+      STAFF_POSITION: position,
+      STAFF_NAME: name,
+      STAFF_SEX: sex,
+      STAFF_NUM: number,
+    });
+    navigate(0);
+  };
   return (
     <>
       <header>
@@ -55,10 +82,18 @@ function Staff() {
             return <StaffRow StaffRow={e} />;
           })}
           <div className="staff__main--footer">
-            <div id="staffAddBtn" className="staff__main--footer-add">
+            <div
+              id="staffAddBtn"
+              className="staff__main--footer-add"
+              onClick={handleSubmit}
+            >
               추가
             </div>
-            <div id="staffDelBtn" className="staff__main--footer-remove">
+            <div
+              id="staffDelBtn"
+              className="staff__main--footer-remove"
+              onClick={handleDelete}
+            >
               삭제
             </div>
             <div id="staffEditBtn" className="staff__main--footer-edit">

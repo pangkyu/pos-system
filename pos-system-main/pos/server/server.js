@@ -1,9 +1,15 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const port = 3001;
+const bodyParser = require("body-parser");
+const { urlencoded } = require("body-parser");
 
 //mariaDB connect
 const db = require("./database");
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
 //router folder
 const takeout = require("./Router/takeout");
 app.get("/category", takeout);
