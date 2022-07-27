@@ -2,19 +2,6 @@ const express = require("express");
 const router = express.Router();
 const db = require("../database");
 
-router.put("/Staff", (req, res) => {
-  const position = req.body.STAFF_POSITION;
-  const name = req.body.STAFF_NAME;
-  const number = req.body.STAFF_NUM;
-  const sqlQuery = `update board set(STAFF_POSITION, STAFF_NUM) where STAFF_NAME = ? `;
-  db.query(sqlQuery, [position, name, number], function (err, results, fields) {
-    if (err) {
-      console.log(err);
-    } else {
-      res.send(results);
-    }
-  });
-});
 router.delete("/Staff/:name", (req, res) => {
   const name = req.body.STAFF_NAME;
   console.log(name);
