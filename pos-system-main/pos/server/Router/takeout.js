@@ -13,12 +13,14 @@ router.all("/category", (req, res) => {
     }
   );
 });
-router.all("/menu", (req, res) => {
-  db.query("select MENU_NAME from menu;", function (err, results, fields) {
+router.all("/menu/:categoryName", (req, res) => {
+  const sqlQuery = `select MENU_NAME, MENU_PRICE from menu where MENU_CATEGORY = ?`;
+  const category = req.body.MENU_CATEGORY;
+  db.query(sqlQuery, [category], function (err, results, fields) {
     if (err) console.log(err);
     else res.send(results);
   });
-  // const sql = 'select MENU_NAME from menu where values(?)'; 카테고리 클릭 이벤트 리스너 입력받아서 values 값으로 전달
+  // const sql = 'select MENU_NAME, MENU_PRICE from menu where MENU_CATEGORY = ? '; 카테고리 클릭 이벤트 리스너 입력받아서 values 값으로 전달
 });
 
 module.exports = router;

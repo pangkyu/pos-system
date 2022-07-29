@@ -45,7 +45,6 @@ function Takeout() {
       if (response.data.length < 10) {
         for (let i = response.data.length; i < 10; i++) {
           response.data.push([{ MENU_CATEGORY: " " }]);
-          console.log(response.data.length);
           setCategoryData(response.data);
         }
       } else {
