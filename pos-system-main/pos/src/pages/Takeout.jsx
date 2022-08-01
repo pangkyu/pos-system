@@ -53,6 +53,23 @@ function Takeout() {
     };
     fetchData();
   }, []);
+
+  // 메뉴 데이터 받아오기
+  const [menuData, setMenuData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get(`menu/${categoryData}`);
+      if (response.data.length < 20) {
+        for (let i = response.data.length; i < 20; i++) {
+          response.data.push([{ MENU_NAME: " " }]);
+          setMenuData(response.data);
+        }
+      } else {
+        setMenuData(response.data);
+      }
+    };
+    fetchData();
+  }, []);
   return (
     <>
       <header>
