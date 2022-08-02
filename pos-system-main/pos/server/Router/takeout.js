@@ -14,8 +14,8 @@ router.all("/category", (req, res) => {
   );
 });
 router.all("/menu/:categoryName", (req, res) => {
-  const sqlQuery = `select MENU_NAME, MENU_PRICE from menu where MENU_CATEGORY = ?`;
-  const category = req.body.MENU_CATEGORY;
+  const sqlQuery = `select MENU_NAME, MENU_PRICE from menu where MENU_CATEGORY = '?'`;
+  const category = decodeURIComponent(req.body.selectCategory);
   db.query(sqlQuery, [category], function (err, results, fields) {
     if (err) console.log(err);
     else res.send(results);

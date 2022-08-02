@@ -56,9 +56,12 @@ function Takeout() {
 
   // 메뉴 데이터 받아오기
   const [menuData, setMenuData] = useState([]);
+  const [selectCategory, setSelectCategory] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(`menu/${categoryData}`);
+      const response = await axios.get(
+        `menu/${encodeURIComponent(selectCategory)}`
+      );
       if (response.data.length < 20) {
         for (let i = response.data.length; i < 20; i++) {
           response.data.push([{ MENU_NAME: " " }]);
@@ -70,6 +73,7 @@ function Takeout() {
     };
     fetchData();
   }, []);
+  console.log(menuData);
   return (
     <>
       <header>
@@ -136,7 +140,12 @@ function Takeout() {
         <div className="takeout__menu">
           <div className="takeout__menu--group">
             {categoryData.map((e) => {
-              return <Category Category={e} />;
+              return (
+                <Category
+                  Category={e}
+                  onClick={() => setSelectCategory(Category.MENU_CATEGORY)}
+                />
+              );
             })}
           </div>
           <div className="takeout__menu--dishes">
