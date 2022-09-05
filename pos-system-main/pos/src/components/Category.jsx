@@ -1,11 +1,12 @@
-import axios from "axios";
 import react from "react";
-import { useState, useEffect } from "react";
 
-const Category = ({ Category }) => {
+const Category = ({ Category, handleonClick2 }) => {
   return (
     <>
-      <div className="takeout__menu--group-button">
+      <div
+        className="takeout__menu--group-button"
+        onClick={() => handleonClick2(Category.MENU_CATEGORY)}
+      >
         {Category.MENU_CATEGORY}
       </div>
     </>

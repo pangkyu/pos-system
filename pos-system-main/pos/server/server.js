@@ -15,7 +15,7 @@ app.use(express.json());
 const takeout = require("./Router/takeout");
 app.get("/category", takeout);
 app.all("/menu", takeout);
-app.all("/menu/:categoryName", takeout);
+app.all("/category/:currentCategory", takeout);
 const staff = require("./Router/staff");
 app.all("/Staff", staff);
 app.delete("/Staff/:name", staff);

@@ -1,7 +1,7 @@
 import react, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Category from "../components/Category";
-
+import Menu from "../components/Menu";
 import axios from "axios";
 
 function Takeout() {
@@ -34,10 +34,10 @@ function Takeout() {
     setTimer(`${year}년 ${month}월 ${day}일 ${hours}:${minutes}:${seconds}`);
   };
 
-  //axios
-
   // 카테고리 데이터 받아오기
   const [categoryData, setCategoryData] = useState([]);
+  const [currentCategory, setCurrentCategory] = useState("커피");
+
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get("category");
@@ -54,26 +54,30 @@ function Takeout() {
     fetchData();
   }, []);
 
-  // 메뉴 데이터 받아오기
-  const [menuData, setMenuData] = useState([]);
-  const [selectCategory, setSelectCategory] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(
-        `menu/${encodeURIComponent(selectCategory)}`
+      const response2 = await axios.get(
+        `category/${encodeURIComponent(currentCategory)}`
       );
-      if (response.data.length < 20) {
-        for (let i = response.data.length; i < 20; i++) {
-          response.data.push([{ MENU_NAME: " " }]);
-          setMenuData(response.data);
+      if (response2.data.length < 20) {
+        for (let i = response2.data.length; i < 20; i++) {
+          response2.data.push([{ MENU_NAME: " " }]);
+          setMenuData(response2.data);
         }
       } else {
-        setMenuData(response.data);
+        setMenuData(response2.data);
       }
     };
     fetchData();
-  }, []);
-  console.log(menuData);
+  }, [currentCategory]);
+
+  // 메뉴 데이터 받아오기
+
+  const [menuData, setMenuData] = useState([]);
+
+  const handleonClick2 = (category) => {
+    setCurrentCategory(category);
+  };
   return (
     <>
       <header>
@@ -139,73 +143,15 @@ function Takeout() {
         </div>
         <div className="takeout__menu">
           <div className="takeout__menu--group">
-            {categoryData.map((e) => {
-              return (
-                <Category
-                  Category={e}
-                  onClick={() => setSelectCategory(Category.MENU_CATEGORY)}
-                />
-              );
+            {categoryData.map((e, i) => {
+              return <Category Category={e} handleonClick2={handleonClick2} />;
             })}
           </div>
           <div className="takeout__menu--dishes">
             <div className="takeout__menu--dishes-coffee">
-              <div className="takeout__menu--dishes-button">
-                아메리카노 ICE 3000
-              </div>
-              <div className="takeout__menu--dishes-button">
-                아메리카노 HOT 2500
-              </div>
-              <div className="takeout__menu--dishes-button">
-                카페라떼 HOT 3000
-              </div>
-              <div className="takeout__menu--dishes-button">
-                카페라떼 ICE 3500
-              </div>
-              <div className="takeout__menu--dishes-button">
-                카라멜 마끼야또 ICE 3000
-              </div>
-              <div className="takeout__menu--dishes-button">
-                카라멜 마끼야또 HOT 2500
-              </div>
-              <div className="takeout__menu--dishes-button">
-                카푸치노 ICE 3000
-              </div>
-              <div className="takeout__menu--dishes-button">
-                카푸치노 HOT 3000
-              </div>
-              <div className="takeout__menu--dishes-button">
-                더치 아메리카노 ICE 3000
-              </div>
-              <div className="takeout__menu--dishes-button">
-                더치 아메리카노 HOT 3000
-              </div>
-              <div className="takeout__menu--dishes-button">아포가토 4500</div>
-              <div className="takeout__menu--dishes-button">
-                에스프레소 HOT 3000
-              </div>
-              <div className="takeout__menu--dishes-button">
-                콜드브루 ICE 3000
-              </div>
-              <div className="takeout__menu--dishes-button">
-                콜드브루 HOT 3000
-              </div>
-              <div className="takeout__menu--dishes-button">
-                바닐라라떼 ICE 3000
-              </div>
-              <div className="takeout__menu--dishes-button">
-                바닐라라떼 HOT 3000
-              </div>
-              <div className="takeout__menu--dishes-button">
-                달구나크림커피 3000
-              </div>
-              <div className="takeout__menu--dishes-button">
-                카페모카 ICE 3000
-              </div>
-              <div className="takeout__menu--dishes-button">
-                카페모카 HOT 3000
-              </div>
-              <div className="takeout__menu--dishes-button">샷추가 500</div>
+              {menuData.map((e) => {
+                return <Menu Category={e}></Menu>;
+              })}
             </div>
           </div>
         </div>
