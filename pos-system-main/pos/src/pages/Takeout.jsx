@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Category from "../components/Category";
 import Menu from "../components/Menu";
 import axios from "axios";
+import PosLine from "../components/PosLine";
 
 function Takeout() {
   // navigate 설정
@@ -56,16 +57,16 @@ function Takeout() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response2 = await axios.get(
+      const response = await axios.get(
         `category/${encodeURIComponent(currentCategory)}`
       );
-      if (response2.data.length < 20) {
-        for (let i = response2.data.length; i < 20; i++) {
-          response2.data.push([{ MENU_NAME: " " }]);
-          setMenuData(response2.data);
+      if (response.data.length < 20) {
+        for (let i = response.data.length; i < 20; i++) {
+          response.data.push([{ MENU_NAME: " " }]);
+          setMenuData(response.data);
         }
       } else {
-        setMenuData(response2.data);
+        setMenuData(response.data);
       }
     };
     fetchData();
@@ -78,6 +79,10 @@ function Takeout() {
   const handleonClick2 = (category) => {
     setCurrentCategory(category);
   };
+
+  // 포스라인 데이터 받아오기
+  const [posLineData, setPosLineData] = useState([]);
+
   return (
     <>
       <header>
@@ -117,6 +122,9 @@ function Takeout() {
             <div className="takeout__cash--info-list">가격</div>
           </div>
           <div className="takeout__cash--list">
+            {posLineData.map((e) => {
+              return <PosLine Category={e}></PosLine>;
+            })}
             <div className="takeout__cash--list-area">
               <p className="takeout__cash--list-area-menu">아메리카노(ice)</p>
               <p className="takeout__cash--list-area-unitprice">4500</p>
